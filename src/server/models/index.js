@@ -6,6 +6,7 @@ import PendingMessagePart from "./pending-message-part";
 import Organization from "./organization";
 import Campaign from "./campaign";
 import CampaignAdmin from "./campaign-admin";
+import ContactList from "./contact-list";
 import Assignment from "./assignment";
 import CampaignContact from "./campaign-contact";
 import InteractionStep from "./interaction-step";
@@ -48,6 +49,7 @@ const tableList = [
   "campaign", // good candidate
   "campaign_admin",
   "assignment",
+  "contact_list",
   // the rest are alphabetical
   "campaign_contact", // ?good candidate (or by cell)
   "canned_response", // good candidate
@@ -134,6 +136,7 @@ export {
   Campaign,
   CampaignAdmin,
   CampaignContact,
+  ContactList,
   InteractionStep,
   Invite,
   JobRequest,
