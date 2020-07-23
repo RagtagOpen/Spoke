@@ -9,6 +9,7 @@ const CampaignContact = thinky.createModel(
     .schema({
       id: type.string(),
       campaign_id: requiredString(),
+      contact_list_id: optionalString(),
       assignment_id: optionalString(),
       external_id: optionalString().stopReference(),
       first_name: optionalString(),
@@ -44,6 +45,8 @@ const CampaignContact = thinky.createModel(
 
 // for updating is_opted_out:
 CampaignContact.ensureIndex("cell");
+
+CampaignContact.ensureIndex("contact_list_id");
 
 CampaignContact.ensureIndex("campaign_assignment", doc => [
   doc("campaign_id"),
