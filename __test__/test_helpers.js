@@ -57,9 +57,11 @@ export async function createUser(
   return user;
 }
 
-export async function createContactList(campaign) {
-  const campaignId = campaign.id;
-  const contactList = new ContactList({ campaign_id: campaignId });
+export async function createContactList(org) {
+  const organizationId = org.data.createOrganization.id;
+  const contactList = await new ContactList({
+    organization_id: organizationId
+  });
   await contactList.save();
 
   return contactList;

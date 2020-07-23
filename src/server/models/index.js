@@ -46,10 +46,10 @@ function createLoader(model, opts) {
 const tableList = [
   "organization", // good candidate?
   "user", // good candidate
+  "contact_list",
   "campaign", // good candidate
   "campaign_admin",
   "assignment",
-  "contact_list",
   // the rest are alphabetical
   "campaign_contact", // ?good candidate (or by cell)
   "canned_response", // good candidate

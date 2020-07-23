@@ -3,8 +3,7 @@ import {
   cleanupTest,
   createUser as helperCreateUser,
   createInvite as helperCreateInvite,
-  createOrganization as helperCreateOrganization,
-  createCampaign
+  createOrganization as helperCreateOrganization
 } from "../../test_helpers";
 import { r, ContactList } from "../../../src/server/models";
 
@@ -12,7 +11,6 @@ describe("A ContactList model", () => {
   let userTest;
   let inviteTest;
   let organizationTest;
-  let campaignTest;
   let contactListFields;
 
   beforeEach(async () => {
@@ -21,10 +19,9 @@ describe("A ContactList model", () => {
     userTest = await helperCreateUser();
     inviteTest = await helperCreateInvite();
     organizationTest = await helperCreateOrganization(userTest, inviteTest);
-    campaignTest = await createCampaign(userTest, organizationTest);
 
     contactListFields = {
-      campaign_id: campaignTest.id
+      organization_id: organizationTest.data.createOrganization.id
     };
 
     await new ContactList(contactListFields).save();

@@ -24,7 +24,7 @@ describe("A CampaignContact model", () => {
     inviteTest = await helperCreateInvite();
     organizationTest = await helperCreateOrganization(userTest, inviteTest);
     campaignTest = await createCampaign(userTest, organizationTest);
-    contactListTest = await createContactList(campaignTest);
+    contactListTest = await createContactList(organizationTest);
   }, global.DATABASE_SETUP_TEARDOWN_TIMEOUT);
 
   afterEach(async () => {

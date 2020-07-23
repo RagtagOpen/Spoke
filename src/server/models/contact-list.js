@@ -8,12 +8,12 @@ const ContactList = thinky.createModel(
     .object()
     .schema({
       id: type.string(),
-      campaign_id: requiredString()
+      organization_id: requiredString()
     })
     .allowExtra(false),
   { noAutoCreation: true }
 );
 
-ContactList.ensureIndex("campaign_id");
+ContactList.ensureIndex("organization_id");
 
 export default ContactList;
