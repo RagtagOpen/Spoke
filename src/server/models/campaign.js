@@ -11,6 +11,7 @@ const Campaign = thinky.createModel(
     .schema({
       id: type.string(),
       organization_id: requiredString(),
+      contact_list_id: optionalString(),
       creator_id: type
         .string()
         .allowNull(true)

@@ -5,6 +5,7 @@ import {
   dropTables,
   User,
   CampaignContact,
+  ContactList,
   r
 } from "../src/server/models/";
 import { graphql } from "graphql";
@@ -54,6 +55,16 @@ export async function createUser(
     });
   }
   return user;
+}
+
+export async function createContactList(org) {
+  const organizationId = org.data.createOrganization.id;
+  const contactList = await new ContactList({
+    organization_id: organizationId
+  });
+  await contactList.save();
+
+  return contactList;
 }
 
 export async function createContacts(campaign, count = 1) {

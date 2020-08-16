@@ -6,6 +6,7 @@ import PendingMessagePart from "./pending-message-part";
 import Organization from "./organization";
 import Campaign from "./campaign";
 import CampaignAdmin from "./campaign-admin";
+import ContactList from "./contact-list";
 import Assignment from "./assignment";
 import CampaignContact from "./campaign-contact";
 import InteractionStep from "./interaction-step";
@@ -45,6 +46,7 @@ function createLoader(model, opts) {
 const tableList = [
   "organization", // good candidate?
   "user", // good candidate
+  "contact_list",
   "campaign", // good candidate
   "campaign_admin",
   "assignment",
@@ -134,6 +136,7 @@ export {
   Campaign,
   CampaignAdmin,
   CampaignContact,
+  ContactList,
   InteractionStep,
   Invite,
   JobRequest,
